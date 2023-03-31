@@ -1,0 +1,39 @@
+{
+  "name": "@akiojin/git-credential-manager-helper",
+  "version": "0.0.0",
+  "description": "Git Credential Manager Operation Helper",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "npm install && ncc build src/index.ts --license licenses.txt",
+    "clean": "rimraf dist && rimraf node_modules && npm cache clean --force"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/akiojin/git-credential-manager-helper.git"
+  },
+  "keywords": [
+    "git",
+    "credential",
+    "git-credential-manager",
+    "credential-manager-core"
+  ],
+  "author": "Akio Jinsenji <akio-jinsenji@cloud-creative-studios.com> (https://github.com/akiojin)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/akiojin/git-credential-manager-helper/issues"
+  },
+  "homepage": "https://github.com/akiojin/git-credential-manager-helper#readme",
+  "dependencies": {
+    "@actions/exec": "1.1.1"
+  },
+  "private": false,
+  "devDependencies": {
+    "@commitlint/cli": "17.5.1",
+    "@commitlint/config-conventional": "17.4.4",
+    "@types/node": "18.15.11",
+    "@vercel/ncc": "0.36.1",
+    "husky": "8.0.3",
+    "rimraf": "4.4.1",
+    "typescript": "5.0.2"
+  }
+}

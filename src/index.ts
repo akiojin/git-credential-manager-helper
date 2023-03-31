@@ -1,0 +1,1 @@
+export { GitCredentialManager } from './GitCredentialManager';
