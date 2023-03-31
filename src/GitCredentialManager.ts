@@ -3,6 +3,14 @@ import { ExecOptions } from '@actions/exec'
 
 export class GitCredentialManager
 {
+  /**
+   * Setup git credential manager.
+   * Install git-credential-manager-core with Homebrew.
+   * 
+   * Hobrew is required.
+   * 
+   * @returns Promise<void>
+   */
   static async Setup(): Promise<void>
   {
     await exec.exec('brew', ['tap', 'microsoft/git'])
