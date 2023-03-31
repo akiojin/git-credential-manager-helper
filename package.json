@@ -1,6 +1,6 @@
 {
   "name": "@akiojin/git-credential-manager-helper",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Git Credential Manager Operation Helper",
   "main": "dist/index.js",
   "scripts": {
