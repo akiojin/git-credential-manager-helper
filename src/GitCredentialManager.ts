@@ -14,19 +14,20 @@ export class GitCredentialManager
   static async Setup(): Promise<void>
   {
     await exec.exec('brew', ['tap', 'microsoft/git'])
-    await exec.exec('brew', ['install', '--cask', 'git-credential-manager-core'])
+    await exec.exec('brew', ['install', '--cask', 'git-credential-manager'])
   }
 
-  static async Configure(): Promise<number>
+  static async Configure(): Promise<void>
   {
     await this.Execute('configure')
-    return exec.exec('git', ['config', '--global', 'credential.interactive', 'false'])
+    await exec.exec('git', ['config', '--global', 'credential.interactive', 'false'])
+    await exec.exec('git', ['config', '--global', 'credential.credentialStore', 'keychain'])
   }
 
   static Execute(command: string, options?: ExecOptions): Promise<number>
   {
     // https://github.com/GitCredentialManager/git-credential-manager/blob/main/docs/credstores.md#macos-keychain
-    return exec.exec('git', ['credential-manager-core', command], options)
+    return exec.exec('git', ['credential-manager', command], options)
   }
 
   /**

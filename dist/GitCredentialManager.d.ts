@@ -1,7 +1,15 @@
 import { ExecOptions } from '@actions/exec';
 export declare class GitCredentialManager {
+    /**
+     * Setup git credential manager.
+     * Install git-credential-manager-core with Homebrew.
+     *
+     * Hobrew is required.
+     *
+     * @returns Promise<void>
+     */
     static Setup(): Promise<void>;
-    static Configure(): Promise<number>;
+    static Configure(): Promise<void>;
     static Execute(command: string, options?: ExecOptions): Promise<number>;
     /**
      * Get git credentials
