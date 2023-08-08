@@ -14,7 +14,8 @@ export class GitCredentialManager
   static async Setup(): Promise<void>
   {
     await exec.exec('brew', ['tap', 'microsoft/git'])
-    await exec.exec('brew', ['install', '--cask', 'git-credential-manager'])
+    // https://github.com/git-ecosystem/git-credential-manager/blob/main/docs/rename.md#macos-package
+    await exec.exec('brew', ['install', '--cask', 'git-credential-manager-core'])
   }
 
   static async Configure(): Promise<void>
